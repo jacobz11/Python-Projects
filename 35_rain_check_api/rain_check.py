@@ -15,7 +15,7 @@ response = requests.get("https://api.openweathermap.org/data/2.5/forecast", para
 response.raise_for_status()
 data = response.json()
 
-My_GMAIL = "pydeveloper102@Gmail.com"
+MY_GMAIL = "pydeveloper102@Gmail.com"
 PASSWORD = "mmtzummbeadzndpy"
 
 will_rain = False
