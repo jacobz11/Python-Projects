@@ -1,8 +1,5 @@
 import requests
 import smtplib
-# account_sid = "ACf706b1e14c4ae9ee013c97dfc84aaed9"
-# auth_token = "db02e42d2ebcf77469e1ec7044f5d3cc"
-
 
 MY_LAT = 31.3141
 MY_LONG = 34.6203
@@ -18,16 +15,13 @@ response = requests.get("https://api.openweathermap.org/data/2.5/forecast", para
 response.raise_for_status()
 data = response.json()
 
-# 3T3ZV8C9CFC87R5R5ASTVEK1 ---- Recover Twilio Code ----
-
 MY_GMAIL = "jacobzak11@gmail.com"
 PASSWORD = "xtogtvvuslejntkj"
 
 will_rain = False
 weather_list = [weather["weather"][0]["id"] for weather in data["list"]]
 for wid in weather_list:
-    # Change this if to wid < 700
-    if wid > 803:
+    if wid < 700:
         will_rain = True
 
 if will_rain:
